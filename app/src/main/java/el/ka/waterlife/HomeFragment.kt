@@ -7,9 +7,12 @@ import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import el.ka.waterlife.utils.round
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlin.math.roundToInt
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
+    private var lastWater: Double = 0.0
     private var percent: Double = 0.0
+    private var percentFull: Double = 0.0
     private var needWater = 2000
     private var currentWater = 1600
 
@@ -25,12 +28,29 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        percent = getCurrentNormaPercent()
         updateIndicatorSize()
+        updateIndicators()
+
+        btn_add_water.setOnClickListener {
+            addWater()
+        }
+    }
+
+    private fun addWater() {
+        currentWater += 250
+        calculateLastWater()
         updateIndicators()
     }
 
+    private fun calculateLastWater() {
+        lastWater = (needWater - currentWater).toDouble()
+        if (lastWater <= 0) lastWater = 0.0
+    }
+
     private fun updateIndicators() {
+        calculateLastWater()
+        percentFull = if (lastWater == 0.0) 1.0 else getCurrentNormaPercent()
+        percent = getCurrentNormaPercent()
         updateIndicator()
         updateBottomBar()
     }
@@ -57,24 +77,25 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun updateIndicator() {
-        val waterParams = getLayoutParams(INDICATOR, percent)
+        val waterParams = getLayoutParams(INDICATOR, percentFull)
         indicator_value_water.layoutParams = waterParams
 
-        val emptyParams = getLayoutParams(INDICATOR, 1 - percent)
+        val emptyParams = getLayoutParams(INDICATOR, 1 - percentFull)
         indicator_value_empty.layoutParams = emptyParams
     }
 
     @SuppressLint("SetTextI18n")
     private fun updateBottomBar() {
-        val waterBarParams = getLayoutParams(BOTTOM_BAR, percent)
+        val waterBarParams = getLayoutParams(BOTTOM_BAR, percentFull)
         bottomBarWater.layoutParams = waterBarParams
 
-        val emptyBarParams = getLayoutParams(BOTTOM_BAR, 1 - percent)
+        val emptyBarParams = getLayoutParams(BOTTOM_BAR, 1 - percentFull)
         bottomBarEmpty.layoutParams = emptyBarParams
 
-        val currentWaterString = (currentWater.toDouble() / 1000.0).round(1).toString()
-        val lastWaterString = ((needWater - currentWater).toDouble() / 1000.0).toDouble().round(1).toString()
-        val percentString = (percent*100).round(1).toString()
+        val currentWaterString = (currentWater.toDouble() / 1000.0).round(2).toString()
+
+        val lastWaterString = (lastWater / 1000.0).round(2).toString()
+        val percentString = (percent * 100).roundToInt().toString()
 
         bottom_bar_current_water.text = getString(R.string.currentWater, currentWaterString)
         bottom_bar_current_percentage.text = "$percentString%"

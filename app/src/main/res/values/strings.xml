@@ -6,4 +6,5 @@
     <string name="last_water">Осталось: %1$sL</string>
     <string name="currentWater">%1$sL</string>
     <string name="currentPercentage">${%1$2s}%</string>
+    <string name="bottom_bar_dem">•</string>
 </resources>

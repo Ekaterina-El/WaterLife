@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="@color/bg_color"
     android:orientation="vertical"
     android:padding="10dp">
 
@@ -44,6 +45,26 @@
             android:src="@drawable/person" />
     </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/btn_add_water"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp">
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/btn_add_water" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_plus"
+            app:tint="@color/white" />
+    </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,42 +72,38 @@
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:paddingHorizontal="20dp"
             android:layout_height="wrap_content"
             android:gravity="center_vertical">
 
             <TextView
                 android:id="@+id/bottom_bar_current_water"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/currentWater"
-                android:textColor="#333" />
+                style="@style/textBold18"
+                android:text="@string/currentWater" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" • "
-                android:textColor="#333" />
+                style="@style/textBold18"
+                android:text="@string/bottom_bar_dem" />
 
             <TextView
                 android:id="@+id/bottom_bar_current_percentage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/currentPercentage"
-                android:textColor="#333" />
+                style="@style/textBold18"
+                android:text="@string/currentPercentage" />
 
             <TextView
                 android:id="@+id/bottom_bar_last_water"
+                style="@style/text"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:text="@string/last_water"
-                android:textColor="#333" />
+                android:text="@string/last_water" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="15dp"
+            android:background="@drawable/bottom_bar_empty"
             android:orientation="horizontal">
 
             <View
@@ -100,8 +117,7 @@
                 android:id="@+id/bottomBarEmpty"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight=".9"
-                android:background="@drawable/bottom_bar_empty" />
+                android:layout_weight=".9" />
 
         </LinearLayout>
     </LinearLayout>
