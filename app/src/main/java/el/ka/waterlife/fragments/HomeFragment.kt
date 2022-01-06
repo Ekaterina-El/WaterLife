@@ -1,11 +1,11 @@
-package el.ka.waterlife
+package el.ka.waterlife.fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
+import el.ka.waterlife.R
 import el.ka.waterlife.utils.round
 import kotlinx.android.synthetic.main.fragment_home.*
 import java.text.SimpleDateFormat
@@ -20,7 +20,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private var percent: Double = 0.0
     private var percentFull: Double = 0.0
     private var needWater = 2000
-    private var currentWater = 1600
+    private var currentWater = 0
 
     companion object {
         const val INDICATOR = "indicator"

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:orientation="vertical"
     android:backgroundTint="@color/bg_color"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,14 +15,12 @@
         android:layout_height="0dp"
         android:layout_weight="1" />
 
-
-    <TextView
-        android:text="Menu in development"
-        android:backgroundTint="@color/white"
-        android:gravity="center"
-        android:textColor="@color/text_color"
-        android:textSize="18sp"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/main_bottom_menu"
         android:layout_width="match_parent"
         android:layout_height="67dp"
-        android:background="#333" />
+        android:background="@color/white"
+        app:itemIconTint="@color/drawer_item_color"
+        app:itemTextColor="@color/drawer_item_color"
+        app:menu="@menu/main_menu" />
 </LinearLayout>

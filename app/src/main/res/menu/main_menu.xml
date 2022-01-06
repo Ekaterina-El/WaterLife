@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/menu_home_fragment"
+        android:title="@string/drink_water"
+        app:showAsAction="always"
+        android:iconTint="@color/empty_bar_color"
+        android:icon="@drawable/ic_drop" />
+
+    <item android:id="@+id/menu_history_fragment"
+        android:title="@string/history"
+        android:iconTint="@color/empty_bar_color"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_bar_chart" />
+
+    <item android:id="@+id/menu_settings_fragment"
+        android:title="@string/settings"
+        android:iconTint="@color/empty_bar_color"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_settings" />
+</menu>

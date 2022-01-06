@@ -15,4 +15,7 @@
     <string name="thursday">четверг</string>
     <string name="friday">пятница</string>
     <string name="saturday">суббота</string>
+    <string name="drink_water">Выпить воды</string>
+    <string name="history">История</string>
+    <string name="settings">Настройки</string>
 </resources>
