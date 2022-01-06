@@ -15,7 +15,12 @@
         android:layout_weight="1" />
 
 
-    <View
+    <TextView
+        android:text="Menu in development"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        android:textColor="@color/text_color"
+        android:textSize="18sp"
         android:layout_width="match_parent"
         android:layout_height="67dp"
         android:background="#333" />
