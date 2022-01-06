@@ -13,6 +13,40 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
+        <!--  Data - start  -->
+        <LinearLayout
+            android:layout_width="57dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/clock_day"
+                style="@style/text_clock"
+                android:textSize="24sp"
+                android:paddingVertical="10dp"
+                android:background="@drawable/clock_day"
+                android:text="6" />
+
+            <TextView
+                android:id="@+id/clock_day_of_week"
+                style="@style/text_clock"
+                android:textSize="9sp"
+                android:textColor="@color/white"
+                android:background="@drawable/clock_day_of_week"
+                android:text="@string/thursday" />
+
+            <TextView
+                android:id="@+id/clock_time"
+                android:layout_marginTop="3dp"
+                style="@style/text_clock"
+                android:textSize="10sp"
+                android:text="05:32 PM" />
+
+
+        </LinearLayout>
+        <!--  Data - end  -->
+
+
         <LinearLayout
             android:id="@+id/indicator_value"
             android:layout_width="180dp"

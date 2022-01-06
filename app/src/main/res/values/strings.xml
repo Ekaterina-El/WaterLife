@@ -7,4 +7,12 @@
     <string name="currentWater">%1$sL</string>
     <string name="currentPercentage">${%1$2s}%</string>
     <string name="bottom_bar_dem">•</string>
+
+    <string name="sunday">воскресенье</string>
+    <string name="monday">понедельник</string>
+    <string name="tuesday">вторник</string>
+    <string name="wednesday">среда</string>
+    <string name="thursday">четверг</string>
+    <string name="friday">пятница</string>
+    <string name="saturday">суббота</string>
 </resources>

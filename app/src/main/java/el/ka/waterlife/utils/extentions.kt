@@ -1,3 +1,9 @@
 package el.ka.waterlife.utils
 
-fun Double.round(decimals: Int = 2): Double = "%.${decimals}f".format(this).toDouble()
+import kotlin.math.round
+
+fun Double.round(decimals: Int = 2): Double {
+    var mult = 1.0;
+    repeat(decimals) { mult *= 10 }
+    return round(this * mult) / mult
+}

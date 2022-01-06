@@ -16,4 +16,5 @@
     <color name="empty_color">#fff</color>
     <color name="empty_bar_color">#c1c6cc</color>
     <color name="bg_color">#f5f8fd</color>
+    <color name="clock_white">#e9eef4</color>
 </resources>
