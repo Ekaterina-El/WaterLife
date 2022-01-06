@@ -1,38 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/indicator_value"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/indicator_value_empty"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.3"
+                android:background="@color/empty_color" />
+
+            <TextView
+                android:id="@+id/indicator_value_water"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.7"
+                android:background="@color/water_color" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/indicator_person"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/person"
+            android:src="@drawable/person" />
+    </RelativeLayout>
 
     <LinearLayout
-        android:id="@+id/indicator_value"
-        android:layout_width="180dp"
-        android:layout_height="match_parent"
-        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <View
-            android:id="@+id/indicator_value_empty"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.3" />
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
 
-        <TextView
-            android:id="@+id/indicator_value_water"
+            <TextView
+                android:id="@+id/bottom_bar_current_water"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/currentWater"
+                android:textColor="#333" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" • "
+                android:textColor="#333" />
+
+            <TextView
+                android:id="@+id/bottom_bar_current_percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/currentPercentage"
+                android:textColor="#333" />
+
+            <TextView
+                android:id="@+id/bottom_bar_last_water"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/last_water"
+                android:textColor="#333" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.7"
-            android:background="#6175E6" />
+            android:layout_height="15dp"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/bottomBarWater"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".1"
+                android:background="@drawable/bottom_bar_water" />
+
+            <View
+                android:id="@+id/bottomBarEmpty"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".9"
+                android:background="@drawable/bottom_bar_empty" />
+
+        </LinearLayout>
     </LinearLayout>
-
-    <ImageView
-        android:id="@+id/indicator_person"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/person"
-        android:src="@drawable/person" />
-
-
-</RelativeLayout>
+</LinearLayout>

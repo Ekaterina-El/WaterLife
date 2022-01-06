@@ -3,4 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="person">person</string>
+    <string name="last_water">Осталось: %1$sL</string>
+    <string name="currentWater">%1$sL</string>
+    <string name="currentPercentage">${%1$2s}%</string>
 </resources>
